@@ -1,0 +1,4 @@
+*.gch
+gomoku
+CMakeCache.txt
+CMakeFiles

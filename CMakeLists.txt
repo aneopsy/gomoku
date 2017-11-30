@@ -1,39 +1,18 @@
 cmake_minimum_required(VERSION 3.5)
-project(Evolve)
-#########################################################
-# FIND GLUT
-#########################################################
-find_package(GLUT REQUIRED)
-include_directories(${GLUT_INCLUDE_DIRS})
-link_directories(${GLUT_LIBRARY_DIRS})
-add_definitions(${GLUT_DEFINITIONS})
-if(NOT GLUT_FOUND)
-    message(ERROR " GLUT not found!")
-endif(NOT GLUT_FOUND)
-#########################################################
-# FIND OPENGL
-#########################################################
-find_package(OpenGL REQUIRED)
-include_directories(${OpenGL_INCLUDE_DIRS})
-link_directories(${OpenGL_LIBRARY_DIRS})
-add_definitions(${OpenGL_DEFINITIONS})
-if(NOT OPENGL_FOUND)
-    message(ERROR " OPENGL not found!")
-endif(NOT OPENGL_FOUND)
+project(gomoku)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_FLAGS "-g -W -Wall -Wl,--no-as-needed")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -L./lib/ -lGLU -lGL -fopenmp -lglut -lglui")
 
 include_directories(include)
 
-SET(SRCS src/Main.cpp
-        src/Brain/DRAWS.cpp
-        src/Brain/DWRAON.cpp
+SET(SRCS src/main.cpp
+         src/other/global.cpp
 
-        include/ANeuron.hpp
-        include/DRAWS.hpp
-        include/DWRAON.hpp
-        include/IBrain.hpp)
-
-add_executable(evolve "${SRCS}")
+          include/other/global.hpp
+          include/ai/eval.hpp
+          include/ai/manager.hpp
+          include/ai/NGM.hpp
+          include/ai/utils.hpp
+)
+add_executable(gomoku "${SRCS}")
