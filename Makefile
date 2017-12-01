@@ -123,6 +123,141 @@ gomoku/fast:
 	$(MAKE) -f CMakeFiles/gomoku.dir/build.make CMakeFiles/gomoku.dir/build
 .PHONY : gomoku/fast
 
+src/ai/NGM.o: src/ai/NGM.cpp.o
+
+.PHONY : src/ai/NGM.o
+
+# target to build an object file
+src/ai/NGM.cpp.o:
+	$(MAKE) -f CMakeFiles/gomoku.dir/build.make CMakeFiles/gomoku.dir/src/ai/NGM.cpp.o
+.PHONY : src/ai/NGM.cpp.o
+
+src/ai/NGM.i: src/ai/NGM.cpp.i
+
+.PHONY : src/ai/NGM.i
+
+# target to preprocess a source file
+src/ai/NGM.cpp.i:
+	$(MAKE) -f CMakeFiles/gomoku.dir/build.make CMakeFiles/gomoku.dir/src/ai/NGM.cpp.i
+.PHONY : src/ai/NGM.cpp.i
+
+src/ai/NGM.s: src/ai/NGM.cpp.s
+
+.PHONY : src/ai/NGM.s
+
+# target to generate assembly for a file
+src/ai/NGM.cpp.s:
+	$(MAKE) -f CMakeFiles/gomoku.dir/build.make CMakeFiles/gomoku.dir/src/ai/NGM.cpp.s
+.PHONY : src/ai/NGM.cpp.s
+
+src/ai/eval.o: src/ai/eval.cpp.o
+
+.PHONY : src/ai/eval.o
+
+# target to build an object file
+src/ai/eval.cpp.o:
+	$(MAKE) -f CMakeFiles/gomoku.dir/build.make CMakeFiles/gomoku.dir/src/ai/eval.cpp.o
+.PHONY : src/ai/eval.cpp.o
+
+src/ai/eval.i: src/ai/eval.cpp.i
+
+.PHONY : src/ai/eval.i
+
+# target to preprocess a source file
+src/ai/eval.cpp.i:
+	$(MAKE) -f CMakeFiles/gomoku.dir/build.make CMakeFiles/gomoku.dir/src/ai/eval.cpp.i
+.PHONY : src/ai/eval.cpp.i
+
+src/ai/eval.s: src/ai/eval.cpp.s
+
+.PHONY : src/ai/eval.s
+
+# target to generate assembly for a file
+src/ai/eval.cpp.s:
+	$(MAKE) -f CMakeFiles/gomoku.dir/build.make CMakeFiles/gomoku.dir/src/ai/eval.cpp.s
+.PHONY : src/ai/eval.cpp.s
+
+src/ai/manager.o: src/ai/manager.cpp.o
+
+.PHONY : src/ai/manager.o
+
+# target to build an object file
+src/ai/manager.cpp.o:
+	$(MAKE) -f CMakeFiles/gomoku.dir/build.make CMakeFiles/gomoku.dir/src/ai/manager.cpp.o
+.PHONY : src/ai/manager.cpp.o
+
+src/ai/manager.i: src/ai/manager.cpp.i
+
+.PHONY : src/ai/manager.i
+
+# target to preprocess a source file
+src/ai/manager.cpp.i:
+	$(MAKE) -f CMakeFiles/gomoku.dir/build.make CMakeFiles/gomoku.dir/src/ai/manager.cpp.i
+.PHONY : src/ai/manager.cpp.i
+
+src/ai/manager.s: src/ai/manager.cpp.s
+
+.PHONY : src/ai/manager.s
+
+# target to generate assembly for a file
+src/ai/manager.cpp.s:
+	$(MAKE) -f CMakeFiles/gomoku.dir/build.make CMakeFiles/gomoku.dir/src/ai/manager.cpp.s
+.PHONY : src/ai/manager.cpp.s
+
+src/ai/utils.o: src/ai/utils.cpp.o
+
+.PHONY : src/ai/utils.o
+
+# target to build an object file
+src/ai/utils.cpp.o:
+	$(MAKE) -f CMakeFiles/gomoku.dir/build.make CMakeFiles/gomoku.dir/src/ai/utils.cpp.o
+.PHONY : src/ai/utils.cpp.o
+
+src/ai/utils.i: src/ai/utils.cpp.i
+
+.PHONY : src/ai/utils.i
+
+# target to preprocess a source file
+src/ai/utils.cpp.i:
+	$(MAKE) -f CMakeFiles/gomoku.dir/build.make CMakeFiles/gomoku.dir/src/ai/utils.cpp.i
+.PHONY : src/ai/utils.cpp.i
+
+src/ai/utils.s: src/ai/utils.cpp.s
+
+.PHONY : src/ai/utils.s
+
+# target to generate assembly for a file
+src/ai/utils.cpp.s:
+	$(MAKE) -f CMakeFiles/gomoku.dir/build.make CMakeFiles/gomoku.dir/src/ai/utils.cpp.s
+.PHONY : src/ai/utils.cpp.s
+
+src/controller.o: src/controller.cpp.o
+
+.PHONY : src/controller.o
+
+# target to build an object file
+src/controller.cpp.o:
+	$(MAKE) -f CMakeFiles/gomoku.dir/build.make CMakeFiles/gomoku.dir/src/controller.cpp.o
+.PHONY : src/controller.cpp.o
+
+src/controller.i: src/controller.cpp.i
+
+.PHONY : src/controller.i
+
+# target to preprocess a source file
+src/controller.cpp.i:
+	$(MAKE) -f CMakeFiles/gomoku.dir/build.make CMakeFiles/gomoku.dir/src/controller.cpp.i
+.PHONY : src/controller.cpp.i
+
+src/controller.s: src/controller.cpp.s
+
+.PHONY : src/controller.s
+
+# target to generate assembly for a file
+src/controller.cpp.s:
+	$(MAKE) -f CMakeFiles/gomoku.dir/build.make CMakeFiles/gomoku.dir/src/controller.cpp.s
+.PHONY : src/controller.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -149,6 +284,33 @@ src/main.s: src/main.cpp.s
 src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/gomoku.dir/build.make CMakeFiles/gomoku.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
+
+src/map.o: src/map.cpp.o
+
+.PHONY : src/map.o
+
+# target to build an object file
+src/map.cpp.o:
+	$(MAKE) -f CMakeFiles/gomoku.dir/build.make CMakeFiles/gomoku.dir/src/map.cpp.o
+.PHONY : src/map.cpp.o
+
+src/map.i: src/map.cpp.i
+
+.PHONY : src/map.i
+
+# target to preprocess a source file
+src/map.cpp.i:
+	$(MAKE) -f CMakeFiles/gomoku.dir/build.make CMakeFiles/gomoku.dir/src/map.cpp.i
+.PHONY : src/map.cpp.i
+
+src/map.s: src/map.cpp.s
+
+.PHONY : src/map.s
+
+# target to generate assembly for a file
+src/map.cpp.s:
+	$(MAKE) -f CMakeFiles/gomoku.dir/build.make CMakeFiles/gomoku.dir/src/map.cpp.s
+.PHONY : src/map.cpp.s
 
 src/other/global.o: src/other/global.cpp.o
 
@@ -186,9 +348,27 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... gomoku"
 	@echo "... edit_cache"
+	@echo "... src/ai/NGM.o"
+	@echo "... src/ai/NGM.i"
+	@echo "... src/ai/NGM.s"
+	@echo "... src/ai/eval.o"
+	@echo "... src/ai/eval.i"
+	@echo "... src/ai/eval.s"
+	@echo "... src/ai/manager.o"
+	@echo "... src/ai/manager.i"
+	@echo "... src/ai/manager.s"
+	@echo "... src/ai/utils.o"
+	@echo "... src/ai/utils.i"
+	@echo "... src/ai/utils.s"
+	@echo "... src/controller.o"
+	@echo "... src/controller.i"
+	@echo "... src/controller.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/map.o"
+	@echo "... src/map.i"
+	@echo "... src/map.s"
 	@echo "... src/other/global.o"
 	@echo "... src/other/global.i"
 	@echo "... src/other/global.s"
