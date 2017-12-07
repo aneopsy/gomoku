@@ -1,9 +1,9 @@
 NAME	=	test
 
-SRC	=	main.cpp		\
-		src/IOManager.cpp	\
-		src/Logger.cpp
-
+SRC	=	src/IOManager.cpp	\
+		src/Logger.cpp		\
+		src/API/api.cpp		\
+		main.cpp		\
 
 OBJ	=	$(SRC:.cpp=.o)
 

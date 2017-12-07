@@ -9,6 +9,7 @@
 //
 
 #include "API.hpp"
+#include "map.hpp"
 
 API::API()
 {
@@ -18,42 +19,84 @@ API::~API()
 {
 }
 
-API::apiStart(int size)
+void  API::apiStart(int size, int a)
 {
   std::string	answer;
 
+  this->map = Board(size - 1, size - 1);
   answer = "OK - everything is good";
   IOManager::ioWrite(answer);
   Logger::logWrite(INFO, answer);
 }
 
-API::apiBegin()
+void API::apiBegin(int a, int b)
 {
   int	x;
   int	y;
+  std::string answer;
 
-  // SEND POSITIONS
+    x = this->map.getSize() / 2;
+    y = x;
+    answer = std::to_string(x) + " " + std::to_string(y);
+    IOManager::ioWrite(answer);
+    this->map.put(x, y , '1');
 }
 
-API::apiTurn(int x, int y)
+void  API::apiTurn(int x, int y)
 {
-  // MISE A JOUR MAP
-
   int	my_x;
   int	my_y;
 
+
+    this->map.put(x, y, '2');
+
+    // SEARCH POSITIONS
   // SEND POSITIONS
+    // MISE A JOUR MAP
 }
 
-API::apiBoard()
+void  API::apiBoard(int a, int b)
 {
+    std::string line;
+    std::string newline;
+
+    while ((line = IOManager::ioRead()) != "DONE")
+    {
+        line.substr(0, line.find(","));
+        std::cout << line << std::cout;
+    }
   // RECUP INFOS
 
   // SEND POSITIONS
+
+  // MISE A JOUR MAP
 }
 
-API::apiEnd()
+void  API::apiEnd(int a, int b)
 {
   // DELETE TEMP FILES
+  //IOManager::ioWrite("I received End");
 
 }
+
+void    API::apiNothing(int a, int b)
+{
+    std::string line;
+    //std::cout << "NOTHING" << std::endl;
+    line = "UNKNOWN";
+    IOManager::ioWrite(line);
+}
+
+void    API::apiInfo(int a, int b)
+{
+    std::cout << "INFO" << std::endl;
+}
+
+std::unordered_map<std::string, API::memFct> const API::fctMap = {
+        { "START", &API::apiStart },
+        { "BEGIN", &API::apiBegin },
+        { "TURN", &API::apiTurn },
+        { "INFO", &API::apiInfo },
+        { "BOARD", &API::apiBoard },
+        { "END", &API::apiEnd }
+};

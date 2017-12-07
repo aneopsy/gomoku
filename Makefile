@@ -180,6 +180,96 @@ pbrain-gomoku/fast:
 	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/build
 .PHONY : pbrain-gomoku/fast
 
+src/API/api.o: src/API/api.cpp.o
+
+.PHONY : src/API/api.o
+
+# target to build an object file
+src/API/api.cpp.o:
+	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/API/api.cpp.o
+	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/API/api.cpp.o
+.PHONY : src/API/api.cpp.o
+
+src/API/api.i: src/API/api.cpp.i
+
+.PHONY : src/API/api.i
+
+# target to preprocess a source file
+src/API/api.cpp.i:
+	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/API/api.cpp.i
+	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/API/api.cpp.i
+.PHONY : src/API/api.cpp.i
+
+src/API/api.s: src/API/api.cpp.s
+
+.PHONY : src/API/api.s
+
+# target to generate assembly for a file
+src/API/api.cpp.s:
+	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/API/api.cpp.s
+	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/API/api.cpp.s
+.PHONY : src/API/api.cpp.s
+
+src/IOManager.o: src/IOManager.cpp.o
+
+.PHONY : src/IOManager.o
+
+# target to build an object file
+src/IOManager.cpp.o:
+	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/IOManager.cpp.o
+	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/IOManager.cpp.o
+.PHONY : src/IOManager.cpp.o
+
+src/IOManager.i: src/IOManager.cpp.i
+
+.PHONY : src/IOManager.i
+
+# target to preprocess a source file
+src/IOManager.cpp.i:
+	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/IOManager.cpp.i
+	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/IOManager.cpp.i
+.PHONY : src/IOManager.cpp.i
+
+src/IOManager.s: src/IOManager.cpp.s
+
+.PHONY : src/IOManager.s
+
+# target to generate assembly for a file
+src/IOManager.cpp.s:
+	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/IOManager.cpp.s
+	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/IOManager.cpp.s
+.PHONY : src/IOManager.cpp.s
+
+src/Logger.o: src/Logger.cpp.o
+
+.PHONY : src/Logger.o
+
+# target to build an object file
+src/Logger.cpp.o:
+	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/Logger.cpp.o
+	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/Logger.cpp.o
+.PHONY : src/Logger.cpp.o
+
+src/Logger.i: src/Logger.cpp.i
+
+.PHONY : src/Logger.i
+
+# target to preprocess a source file
+src/Logger.cpp.i:
+	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/Logger.cpp.i
+	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/Logger.cpp.i
+.PHONY : src/Logger.cpp.i
+
+src/Logger.s: src/Logger.cpp.s
+
+.PHONY : src/Logger.s
+
+# target to generate assembly for a file
+src/Logger.cpp.s:
+	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/Logger.cpp.s
+	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/Logger.cpp.s
+.PHONY : src/Logger.cpp.s
+
 src/ai/NGM.o: src/ai/NGM.cpp.o
 
 .PHONY : src/ai/NGM.o
@@ -434,6 +524,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... list_install_components"
 	@echo "... install"
+	@echo "... src/API/api.o"
+	@echo "... src/API/api.i"
+	@echo "... src/API/api.s"
+	@echo "... src/IOManager.o"
+	@echo "... src/IOManager.i"
+	@echo "... src/IOManager.s"
+	@echo "... src/Logger.o"
+	@echo "... src/Logger.i"
+	@echo "... src/Logger.s"
 	@echo "... src/ai/NGM.o"
 	@echo "... src/ai/NGM.i"
 	@echo "... src/ai/NGM.s"
