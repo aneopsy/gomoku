@@ -1,12 +1,12 @@
-
 #include <controller.hpp>
 #include <ai/manager.hpp>
 #include <ai/utils.hpp>
 #include <other/global.hpp>
+#include <map.hpp>
 #include <cstring>
 #include <iostream>
 
-bool Controller::generateMove(const char *gs_string, int ai_player_id,
+bool Controller::generateMove(const Board *map, int ai_player_id,
                             int search_depth, int time_limit, int num_threads,
                             int *actual_depth, int *move_r, int *move_c, int *winning_player,
                             unsigned int *node_count, unsigned int *eval_count, unsigned int *pm_count) {
@@ -18,27 +18,10 @@ bool Controller::generateMove(const char *gs_string, int ai_player_id,
         num_threads  < 1) {
         return false;
     }
-    // Copy game state
-    char *gs = new char[g_gs_size];
-    std::memcpy(gs, gs_string, g_gs_size);
-
-    // Convert from string
-    gsFromString(gs_string, gs);
-
-    // Generate move
-    AIManager::generateMove(gs, ai_player_id, search_depth, time_limit, actual_depth,
+    AIManager::generateMove(map.convert(), ai_player_id, search_depth, time_limit, actual_depth,
                                     move_r, move_c, winning_player, node_count, eval_count, pm_count);
-
-    // Release memory
     delete[] gs;
     return true;
-}
-
-void Controller::gsFromString(const char *gs_string, char *gs) {
-    if (strlen(gs_string) != g_gs_size) return;
-    for (int i = 0; i < static_cast<int>(g_gs_size); i++) {
-        gs[i] = gs_string[i] - '0';
-    }
 }
 
 std::string Controller::renderGameState(const char *gs) {
