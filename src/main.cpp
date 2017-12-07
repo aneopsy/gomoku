@@ -7,6 +7,7 @@
 void performAndWriteMove(Board map, int time_limit, int player_id) {
   int move_r, move_c, winning_player, actual_depth;
   unsigned int node_count, eval_count;
+
   bool success = Controller::generateMove(
       map, player_id, -1, time_limit, 1, &actual_depth, &move_r,
       &move_c, &winning_player, &node_count, &eval_count, nullptr);
@@ -29,8 +30,8 @@ int main(int ac, char const *av[]) {
   map.put(rand() % 20, rand() % 20, '2');
   map.put(rand() % 20, rand() % 20, '1');
   while (getchar()) {
-    performAndWriteMove(map, 5000, 1);
-    performAndWriteMove(map, 5000, 2);
+    performAndWriteMove(map, 500, 1);
+    performAndWriteMove(map, 500, 2);
     map.printMap();
   }
   ac = ac;

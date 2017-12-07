@@ -17,6 +17,8 @@ public:
   void clearMap();
   bool put(unsigned int x, unsigned int y, const char c);
   char *getMap();
+  int getSize();
+  void printLinearMap() ;
 
 };
 

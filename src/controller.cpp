@@ -6,13 +6,12 @@
 #include <cstring>
 #include <iostream>
 
-bool Controller::generateMove(const Board *map, int ai_player_id,
+bool Controller::generateMove(Board map, int ai_player_id,
                             int search_depth, int time_limit, int num_threads,
                             int *actual_depth, int *move_r, int *move_c, int *winning_player,
                             unsigned int *node_count, unsigned int *eval_count, unsigned int *pm_count) {
     // Check input data
-    if (strlen(gs_string) != g_gs_size ||
-        ai_player_id  < 1 || ai_player_id > 2 ||
+    if (ai_player_id  < 1 || ai_player_id > 2 ||
         search_depth == 0 || search_depth > 10 ||
         time_limit < 0    ||
         num_threads  < 1) {
@@ -20,7 +19,6 @@ bool Controller::generateMove(const Board *map, int ai_player_id,
     }
     AIManager::generateMove(map.convert(), ai_player_id, search_depth, time_limit, actual_depth,
                                     move_r, move_c, winning_player, node_count, eval_count, pm_count);
-    delete[] gs;
     return true;
 }
 
@@ -34,4 +32,15 @@ std::string Controller::renderGameState(const char *gs) {
         result.push_back('\n');
     }
     return result;
+}
+
+char *Controller::gsFromString() {
+  char *cmap = new char[_size_x * _size_y];
+  std::memcpy(cmap, _map, _size_x * _size_y);
+  if (strlen(gs_string) != g_gs_size)
+    return;
+  for (int i = 0; i < static_cast<int>(g_gs_size); i++) {
+    gs[i] = gs_string[i] - '0';
+  }
+  return cmap;
 }

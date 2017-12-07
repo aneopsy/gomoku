@@ -1,26 +1,27 @@
 cmake_minimum_required(VERSION 3.5)
-project(gomoku)
+project(pbrain-gomoku)
 
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_FLAGS "-g -W -Wall -Wl,--no-as-needed")
+# Enable C++ 11
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
-include_directories(include)
+# Include header directories
+include_directories("include")
 
-SET(SRCS src/main.cpp
-         src/other/global.cpp
-         src/ai/eval.cpp
-         src/ai/manager.cpp
-         src/ai/NGM.cpp
-         src/ai/utils.cpp
-         src/controller.cpp
-         src/map.cpp
+# Add source files
+file(GLOB_RECURSE SRC "src/*.cpp")
+file(GLOB_RECURSE SRC_TEST "tests/*.cpp")
 
-          include/other/global.hpp
-          include/ai/eval.hpp
-          include/ai/manager.hpp
-          include/ai/NGM.hpp
-          include/ai/utils.hpp
-          include/controller.hpp
-          include/map.hpp
-)
-add_executable(gomoku "${SRCS}")
+# Set default build type to Release
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release)
+endif(NOT CMAKE_BUILD_TYPE)
+
+# Main executable
+add_executable(pbrain-gomoku ${SRC})
+
+set(CMAKE_BUILD_TYPE Debug)
+add_executable(renju_prof ${SRC})
+set_target_properties(renju_prof PROPERTIES COMPILE_FLAGS "-pg")
+set_target_properties(renju_prof PROPERTIES LINK_FLAGS "-pg")
+
+install(TARGETS pbrain-gomoku DESTINATION bin)

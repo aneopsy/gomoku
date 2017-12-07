@@ -9,7 +9,7 @@ public:
   Controller();
   ~Controller();
 
-  static bool generateMove(const Board *map, int ai_player_id,
+  static bool generateMove(Board map, int ai_player_id,
                            int search_depth, int time_limit, int num_threads,
                            int *actual_depth, int *move_r, int *move_c,
                            int *winning_player, unsigned int *node_count,

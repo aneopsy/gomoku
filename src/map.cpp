@@ -51,13 +51,6 @@ char *Board::getMap() {
   return (tmp);
 }
 
-char *Controller::gsFromString() {
-  char *cmap = new char[_size_x * _size_y];
-  std::memcpy(cmap, _map, _size_x * _size_y);
-  if (strlen(gs_string) != g_gs_size)
-    return;
-  for (int i = 0; i < static_cast<int>(g_gs_size); i++) {
-    gs[i] = gs_string[i] - '0';
-  }
-  return cmap;
+int Board::getSize() {
+    return (_size_x);
 }
