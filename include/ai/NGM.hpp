@@ -8,7 +8,7 @@ public:
   AINGM();
   ~AINGM();
 
-  static void heuristicNegamax(const char *gs, int player, int depth,
+  static void heuristicNegamax(const int *gs, int player, int depth,
                                int time_limit, bool enable_ab_pruning,
                                int *actual_depth, int *move_r, int *move_c);
 
@@ -26,14 +26,14 @@ private:
     }
   };
 
-  static int heuristicNegamax(char *gs, int player, int initial_depth,
+  static int heuristicNegamax(int *gs, int player, int initial_depth,
                               int depth, bool enable_ab_pruning, int alpha,
                               int beta, int *move_r, int *move_c);
 
-  static void searchMovesOrdered(const char *gs, int player,
+  static void searchMovesOrdered(const int *gs, int player,
                                  std::vector<Move> *result);
 
-  static int negamax(char *gs, int player, int depth, int *move_r, int *move_c);
+  static int negamax(int *gs, int player, int depth, int *move_r, int *move_c);
 };
 
 #endif

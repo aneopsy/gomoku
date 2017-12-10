@@ -9,11 +9,11 @@ public:
   AIEval();
   ~AIEval();
 
-  static int evalState(const char *gs, int player);
+  static int evalState(const int *gs, int player);
 
-  static int evalMove(const char *gs, int r, int c, int player);
+  static int evalMove(const int *gs, int r, int c, int player);
 
-  static int winningPlayer(const char *gs);
+  static int winningPlayer(const int *gs);
 
   struct DirectionMeasurement {
     char length;
@@ -41,11 +41,11 @@ public:
   static int matchPattern(DirectionMeasurement *all_direction_measurement,
                           DirectionPattern *patterns);
 
-  static void measureAllDirections(const char *gs, int r, int c, int player,
+  static void measureAllDirections(const int *gs, int r, int c, int player,
                                    bool consecutive,
                                    AIEval::DirectionMeasurement *adm);
 
-  static void measureDirection(const char *gs, int r, int c, int dr, int dc,
+  static void measureDirection(const int *gs, int r, int c, int dr, int dc,
                                int player, bool consecutive,
                                AIEval::DirectionMeasurement *result);
 };

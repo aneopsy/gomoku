@@ -6,7 +6,7 @@
 #include <string>
 
 class Board {
-  char *_map;
+  int *_map;
   unsigned int _size_y;
   unsigned int _size_x;
 
@@ -15,11 +15,11 @@ public:
   ~Board();
   void printMap();
   void clearMap();
-  bool put(unsigned int x, unsigned int y, const char c);
-  char *getMap();
+  bool put(unsigned int x, unsigned int y, const int c);
+  int *getMap();
   int getSize();
-  void printLinearMap() ;
-
+  void printLinearMap();
+  char *convert();
 };
 
 #endif

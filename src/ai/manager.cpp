@@ -5,12 +5,12 @@
 #include <cstring>
 #include <other/global.hpp>
 
-void AIManager::generateMove(const char *gs, int player, int search_depth,
+void AIManager::generateMove(const int *maps, int player, int search_depth,
                              int time_limit, int *actual_depth, int *move_r,
                              int *move_c, int *winning_player,
                              unsigned int *node_count, unsigned int *eval_count,
                              unsigned int *pm_count) {
-  if (gs == nullptr || player < 1 || player > 2 || search_depth == 0 ||
+  if (maps == nullptr || player < 1 || player > 2 || search_depth == 0 ||
       search_depth > 10 || time_limit < 0 || move_r == nullptr ||
       move_c == nullptr)
     return;
@@ -24,23 +24,23 @@ void AIManager::generateMove(const char *gs, int player, int search_depth,
   if (actual_depth != nullptr)
     *actual_depth = 0;
 
-  _winning_player = AIEval::winningPlayer(gs);
+  _winning_player = AIEval::winningPlayer(maps);
   if (_winning_player != 0) {
     if (winning_player != nullptr)
       *winning_player = _winning_player;
     return;
   }
 
-  char *_gs = new char[g_gs_size];
-  std::memcpy(_gs, gs, g_gs_size);
+  int *_maps = new int[g_maps_size];
+  std::memcpy(_maps, maps, g_maps_size);
 
-  AINGM::heuristicNegamax(_gs, player, search_depth, time_limit, true,
+  AINGM::heuristicNegamax(_maps, player, search_depth, time_limit, true,
                           actual_depth, move_r, move_c);
 
-  std::memcpy(_gs, gs, g_gs_size);
-  AIUtils::setCell(_gs, *move_r, *move_c, static_cast<char>(player));
+  std::memcpy(_maps, maps, g_maps_size);
+  AIUtils::setCell(_maps, *move_r, *move_c, player);
 
-  _winning_player = AIEval::winningPlayer(_gs);
+  _winning_player = AIEval::winningPlayer(_maps);
 
   if (winning_player != nullptr)
     *winning_player = _winning_player;
@@ -51,5 +51,5 @@ void AIManager::generateMove(const char *gs, int player, int search_depth,
   if (pm_count != nullptr)
     *pm_count = g_pm_count;
 
-  delete[] _gs;
+  delete[] _maps;
 }

@@ -14,11 +14,6 @@ public:
                            int *actual_depth, int *move_r, int *move_c,
                            int *winning_player, unsigned int *node_count,
                            unsigned int *eval_count, unsigned int *pm_count);
-
-  static void gsFromString(const char *gs_string, char *gs);
-
-private:
-  static std::string renderGameState(const char *gs);
 };
 
 #endif
