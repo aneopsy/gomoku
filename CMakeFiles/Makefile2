@@ -60,43 +60,6 @@ CMAKE_SOURCE_DIR = /home/aneopsy/gomoku
 CMAKE_BINARY_DIR = /home/aneopsy/gomoku
 
 #=============================================================================
-# Target rules for target CMakeFiles/renju_prof.dir
-
-# All Build rule for target.
-CMakeFiles/renju_prof.dir/all:
-	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/depend
-	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/aneopsy/gomoku/CMakeFiles --progress-num=13,14,15,16,17,18,19,20,21,22,23,24 "Built target renju_prof"
-.PHONY : CMakeFiles/renju_prof.dir/all
-
-# Include target in all.
-all: CMakeFiles/renju_prof.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/renju_prof.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aneopsy/gomoku/CMakeFiles 12
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/renju_prof.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aneopsy/gomoku/CMakeFiles 0
-.PHONY : CMakeFiles/renju_prof.dir/rule
-
-# Convenience name for target.
-renju_prof: CMakeFiles/renju_prof.dir/rule
-
-.PHONY : renju_prof
-
-# clean rule for target.
-CMakeFiles/renju_prof.dir/clean:
-	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/clean
-.PHONY : CMakeFiles/renju_prof.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/renju_prof.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
 # Target rules for target CMakeFiles/pbrain-gomoku.dir
 
 # All Build rule for target.

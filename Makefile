@@ -56,16 +56,17 @@ CMAKE_BINARY_DIR = /home/aneopsy/gomoku
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
 
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -77,6 +78,16 @@ install/local: preinstall
 install/local/fast: install/local
 
 .PHONY : install/local/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -99,28 +110,6 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -155,19 +144,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named renju_prof
-
-# Build rule for target.
-renju_prof: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 renju_prof
-.PHONY : renju_prof
-
-# fast build rule for target.
-renju_prof/fast:
-	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/build
-.PHONY : renju_prof/fast
-
-#=============================================================================
 # Target rules for targets named pbrain-gomoku
 
 # Build rule for target.
@@ -186,7 +162,6 @@ src/API/api.o: src/API/api.cpp.o
 
 # target to build an object file
 src/API/api.cpp.o:
-	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/API/api.cpp.o
 	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/API/api.cpp.o
 .PHONY : src/API/api.cpp.o
 
@@ -196,7 +171,6 @@ src/API/api.i: src/API/api.cpp.i
 
 # target to preprocess a source file
 src/API/api.cpp.i:
-	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/API/api.cpp.i
 	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/API/api.cpp.i
 .PHONY : src/API/api.cpp.i
 
@@ -206,7 +180,6 @@ src/API/api.s: src/API/api.cpp.s
 
 # target to generate assembly for a file
 src/API/api.cpp.s:
-	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/API/api.cpp.s
 	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/API/api.cpp.s
 .PHONY : src/API/api.cpp.s
 
@@ -216,7 +189,6 @@ src/IOManager.o: src/IOManager.cpp.o
 
 # target to build an object file
 src/IOManager.cpp.o:
-	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/IOManager.cpp.o
 	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/IOManager.cpp.o
 .PHONY : src/IOManager.cpp.o
 
@@ -226,7 +198,6 @@ src/IOManager.i: src/IOManager.cpp.i
 
 # target to preprocess a source file
 src/IOManager.cpp.i:
-	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/IOManager.cpp.i
 	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/IOManager.cpp.i
 .PHONY : src/IOManager.cpp.i
 
@@ -236,7 +207,6 @@ src/IOManager.s: src/IOManager.cpp.s
 
 # target to generate assembly for a file
 src/IOManager.cpp.s:
-	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/IOManager.cpp.s
 	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/IOManager.cpp.s
 .PHONY : src/IOManager.cpp.s
 
@@ -246,7 +216,6 @@ src/Logger.o: src/Logger.cpp.o
 
 # target to build an object file
 src/Logger.cpp.o:
-	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/Logger.cpp.o
 	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/Logger.cpp.o
 .PHONY : src/Logger.cpp.o
 
@@ -256,7 +225,6 @@ src/Logger.i: src/Logger.cpp.i
 
 # target to preprocess a source file
 src/Logger.cpp.i:
-	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/Logger.cpp.i
 	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/Logger.cpp.i
 .PHONY : src/Logger.cpp.i
 
@@ -266,7 +234,6 @@ src/Logger.s: src/Logger.cpp.s
 
 # target to generate assembly for a file
 src/Logger.cpp.s:
-	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/Logger.cpp.s
 	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/Logger.cpp.s
 .PHONY : src/Logger.cpp.s
 
@@ -276,7 +243,6 @@ src/ai/NGM.o: src/ai/NGM.cpp.o
 
 # target to build an object file
 src/ai/NGM.cpp.o:
-	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/ai/NGM.cpp.o
 	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/ai/NGM.cpp.o
 .PHONY : src/ai/NGM.cpp.o
 
@@ -286,7 +252,6 @@ src/ai/NGM.i: src/ai/NGM.cpp.i
 
 # target to preprocess a source file
 src/ai/NGM.cpp.i:
-	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/ai/NGM.cpp.i
 	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/ai/NGM.cpp.i
 .PHONY : src/ai/NGM.cpp.i
 
@@ -296,7 +261,6 @@ src/ai/NGM.s: src/ai/NGM.cpp.s
 
 # target to generate assembly for a file
 src/ai/NGM.cpp.s:
-	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/ai/NGM.cpp.s
 	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/ai/NGM.cpp.s
 .PHONY : src/ai/NGM.cpp.s
 
@@ -306,7 +270,6 @@ src/ai/eval.o: src/ai/eval.cpp.o
 
 # target to build an object file
 src/ai/eval.cpp.o:
-	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/ai/eval.cpp.o
 	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/ai/eval.cpp.o
 .PHONY : src/ai/eval.cpp.o
 
@@ -316,7 +279,6 @@ src/ai/eval.i: src/ai/eval.cpp.i
 
 # target to preprocess a source file
 src/ai/eval.cpp.i:
-	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/ai/eval.cpp.i
 	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/ai/eval.cpp.i
 .PHONY : src/ai/eval.cpp.i
 
@@ -326,7 +288,6 @@ src/ai/eval.s: src/ai/eval.cpp.s
 
 # target to generate assembly for a file
 src/ai/eval.cpp.s:
-	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/ai/eval.cpp.s
 	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/ai/eval.cpp.s
 .PHONY : src/ai/eval.cpp.s
 
@@ -336,7 +297,6 @@ src/ai/manager.o: src/ai/manager.cpp.o
 
 # target to build an object file
 src/ai/manager.cpp.o:
-	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/ai/manager.cpp.o
 	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/ai/manager.cpp.o
 .PHONY : src/ai/manager.cpp.o
 
@@ -346,7 +306,6 @@ src/ai/manager.i: src/ai/manager.cpp.i
 
 # target to preprocess a source file
 src/ai/manager.cpp.i:
-	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/ai/manager.cpp.i
 	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/ai/manager.cpp.i
 .PHONY : src/ai/manager.cpp.i
 
@@ -356,7 +315,6 @@ src/ai/manager.s: src/ai/manager.cpp.s
 
 # target to generate assembly for a file
 src/ai/manager.cpp.s:
-	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/ai/manager.cpp.s
 	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/ai/manager.cpp.s
 .PHONY : src/ai/manager.cpp.s
 
@@ -366,7 +324,6 @@ src/ai/utils.o: src/ai/utils.cpp.o
 
 # target to build an object file
 src/ai/utils.cpp.o:
-	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/ai/utils.cpp.o
 	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/ai/utils.cpp.o
 .PHONY : src/ai/utils.cpp.o
 
@@ -376,7 +333,6 @@ src/ai/utils.i: src/ai/utils.cpp.i
 
 # target to preprocess a source file
 src/ai/utils.cpp.i:
-	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/ai/utils.cpp.i
 	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/ai/utils.cpp.i
 .PHONY : src/ai/utils.cpp.i
 
@@ -386,7 +342,6 @@ src/ai/utils.s: src/ai/utils.cpp.s
 
 # target to generate assembly for a file
 src/ai/utils.cpp.s:
-	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/ai/utils.cpp.s
 	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/ai/utils.cpp.s
 .PHONY : src/ai/utils.cpp.s
 
@@ -396,7 +351,6 @@ src/controller.o: src/controller.cpp.o
 
 # target to build an object file
 src/controller.cpp.o:
-	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/controller.cpp.o
 	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/controller.cpp.o
 .PHONY : src/controller.cpp.o
 
@@ -406,7 +360,6 @@ src/controller.i: src/controller.cpp.i
 
 # target to preprocess a source file
 src/controller.cpp.i:
-	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/controller.cpp.i
 	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/controller.cpp.i
 .PHONY : src/controller.cpp.i
 
@@ -416,7 +369,6 @@ src/controller.s: src/controller.cpp.s
 
 # target to generate assembly for a file
 src/controller.cpp.s:
-	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/controller.cpp.s
 	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/controller.cpp.s
 .PHONY : src/controller.cpp.s
 
@@ -426,7 +378,6 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/main.cpp.o
 	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
@@ -436,7 +387,6 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/main.cpp.i
 	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
@@ -446,7 +396,6 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/main.cpp.s
 	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
@@ -456,7 +405,6 @@ src/map.o: src/map.cpp.o
 
 # target to build an object file
 src/map.cpp.o:
-	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/map.cpp.o
 	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/map.cpp.o
 .PHONY : src/map.cpp.o
 
@@ -466,7 +414,6 @@ src/map.i: src/map.cpp.i
 
 # target to preprocess a source file
 src/map.cpp.i:
-	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/map.cpp.i
 	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/map.cpp.i
 .PHONY : src/map.cpp.i
 
@@ -476,7 +423,6 @@ src/map.s: src/map.cpp.s
 
 # target to generate assembly for a file
 src/map.cpp.s:
-	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/map.cpp.s
 	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/map.cpp.s
 .PHONY : src/map.cpp.s
 
@@ -486,7 +432,6 @@ src/other/global.o: src/other/global.cpp.o
 
 # target to build an object file
 src/other/global.cpp.o:
-	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/other/global.cpp.o
 	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/other/global.cpp.o
 .PHONY : src/other/global.cpp.o
 
@@ -496,7 +441,6 @@ src/other/global.i: src/other/global.cpp.i
 
 # target to preprocess a source file
 src/other/global.cpp.i:
-	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/other/global.cpp.i
 	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/other/global.cpp.i
 .PHONY : src/other/global.cpp.i
 
@@ -506,7 +450,6 @@ src/other/global.s: src/other/global.cpp.s
 
 # target to generate assembly for a file
 src/other/global.cpp.s:
-	$(MAKE) -f CMakeFiles/renju_prof.dir/build.make CMakeFiles/renju_prof.dir/src/other/global.cpp.s
 	$(MAKE) -f CMakeFiles/pbrain-gomoku.dir/build.make CMakeFiles/pbrain-gomoku.dir/src/other/global.cpp.s
 .PHONY : src/other/global.cpp.s
 
@@ -516,14 +459,12 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/strip"
-	@echo "... install/local"
-	@echo "... renju_prof"
-	@echo "... pbrain-gomoku"
-	@echo "... rebuild_cache"
-	@echo "... edit_cache"
-	@echo "... list_install_components"
 	@echo "... install"
+	@echo "... install/local"
+	@echo "... list_install_components"
+	@echo "... rebuild_cache"
+	@echo "... pbrain-gomoku"
+	@echo "... edit_cache"
 	@echo "... src/API/api.o"
 	@echo "... src/API/api.i"
 	@echo "... src/API/api.s"
