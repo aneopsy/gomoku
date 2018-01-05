@@ -13,7 +13,7 @@ public:
                                int *actual_depth, int *move_r, int *move_c);
 
 private:
-  static int presetSearchBreadth[5];
+  static int pat[5];
 
   struct Move {
     int r;

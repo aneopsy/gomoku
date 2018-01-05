@@ -4,7 +4,7 @@
 #include <cstdint>
 
 extern int g_board_size;
-extern unsigned int g_gs_size;
+extern unsigned int g_maps_size;
 extern unsigned int g_node_count;
 extern unsigned int g_eval_count;
 extern unsigned int g_pm_count;

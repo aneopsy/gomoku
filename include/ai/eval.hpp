@@ -28,7 +28,7 @@ public:
     char space_count;
   };
 
-  static DirectionPattern *preset_patterns;
+  static DirectionPattern *pat;
 
   static int *preset_scores;
   static void generatePresetPatterns(DirectionPattern **preset_patterns,

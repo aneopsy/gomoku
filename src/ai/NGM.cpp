@@ -36,8 +36,8 @@ void AINGM::heuristicNegamax(const int *maps, int player, int depth,
   if (depth > 0) {
     if (actual_depth != nullptr)
       *actual_depth = depth;
-    heuristicNegamax(_maps, player, depth, depth, enable_ab_pruning, INT_MIN / 2,
-                     INT_MAX / 2, move_r, move_c);
+    heuristicNegamax(_maps, player, depth, depth, enable_ab_pruning,
+                     INT_MIN / 2, INT_MAX / 2, move_r, move_c);
   } else {
     std::clock_t c_start = std::clock();
     for (int d = 6;; d += 2) {
@@ -105,15 +105,10 @@ int AINGM::heuristicNegamax(int *maps, int player, int initial_depth, int depth,
     AIUtils::setCell(maps, move.r, move.c, player);
     int score = 0;
     if (depth > 1)
-      score = heuristicNegamax(maps,
-                               opponent,
-                               initial_depth,
-                               depth - 1,
+      score = heuristicNegamax(maps, opponent, initial_depth, depth - 1,
                                enable_ab_pruning,
-                               -beta,//
-                               -alpha + move.heuristic_val,
-                               nullptr,
-                               nullptr);
+                               -beta, //
+                               -alpha + move.heuristic_val, nullptr, nullptr);
 
     if (score >= 2)
       score = static_cast<int>(score * kScoreDecayFactor);
@@ -207,7 +202,7 @@ int AINGM::negamax(int *maps, int player, int depth, int *move_r, int *move_c) {
       if (AIUtils::remoteCell(maps, r, c))
         continue;
       AIUtils::setCell(maps, r, c, player);
-      int s = -negamax(maps,                  // Game state
+      int s = -negamax(maps,                // Game state
                        player == 1 ? 2 : 1, // Change player
                        depth - 1,           // Reduce depth by 1
                        nullptr,             // Result move not required
