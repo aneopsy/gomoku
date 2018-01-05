@@ -1,6 +1,0 @@
-/home/aneopsy/gomoku/CMakeFiles/install.dir
-/home/aneopsy/gomoku/CMakeFiles/install/local.dir
-/home/aneopsy/gomoku/CMakeFiles/list_install_components.dir
-/home/aneopsy/gomoku/CMakeFiles/rebuild_cache.dir
-/home/aneopsy/gomoku/CMakeFiles/pbrain-gomoku.dir
-/home/aneopsy/gomoku/CMakeFiles/edit_cache.dir
