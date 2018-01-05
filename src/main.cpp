@@ -12,6 +12,7 @@ int main(int ac, char const *av[]) {
   API a;
 
   while ((line = IOManager::ioRead()) != "END") {
+      std::cout << "ok" <<std::endl;
     std::unordered_map<std::string, API::memFct>::const_iterator result =
         API::fctMap.find(line);
 
