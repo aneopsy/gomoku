@@ -5,7 +5,7 @@
 // Login   <alexandre@epitech.net>
 //
 // Started on  Thu Nov 30 16:55:45 2017 Alexandre
-// Last update Thu Nov 30 17:03:53 2017 Alexandre
+// Last update Fri Jan  5 16:34:13 2018 Alexandre
 //
 
 #include "API.hpp"
@@ -23,19 +23,23 @@ API::~API() {}
 void play(Board map, int time_limit) {
   int move_r, move_c, winning_player, actual_depth;
   unsigned int node_count, eval_count;
+  std::string line;
 
   bool success = Controller::generateMove(
       map, 1, -1, time_limit, 1, &actual_depth, &move_r, &move_c,
       &winning_player, &node_count, &eval_count, nullptr);
 
   if (success) {
-    std::cout << 1 << " : MESSAGE"
-              << " d=" << actual_depth << " node_cnt=" << node_count
-              << " eval_cnt=" << eval_count << std::endl;
+    // std::cout << 1 << " : MESSAGE"
+    //          << " d=" << actual_depth << " node_cnt=" << node_count
+    //          << " eval_cnt=" << eval_count << std::endl;
 
     map.put(move_r, move_c, 1);
 
+    line = move_c + "," + move_r;
     std::cout << move_c << "," << move_r << std::endl;
+    Logger::logWrite(INFO, line);
+
   } else {
     std::cout << "ERROR" << std::endl;
   }
@@ -78,6 +82,7 @@ void API::apiBegin(int a, int b) {
   y = x;
   answer = std::to_string(x) + " " + std::to_string(y);
   IOManager::ioWrite(answer);
+  Logger::logWrite(INFO, answer);
   this->map.put(x, y, 1);
 }
 
@@ -105,6 +110,7 @@ void API::apiBoard(int a, int b) {
 void API::apiEnd(int a, int b) {
   // DELETE TEMP FILES
   // IOManager::ioWrite("I received End");
+
 }
 
 void API::apiNothing(int a, int b) {
@@ -112,6 +118,7 @@ void API::apiNothing(int a, int b) {
   // std::cout << "NOTHING" << std::endl;
   line = "UNKNOWN";
   IOManager::ioWrite(line);
+  Logger::logWrite(INFO, line);
 }
 
 void API::apiInfo(int a, int b) { std::cout << "INFO" << std::endl; }
