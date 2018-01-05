@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="pbrain-gomoku"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/alexandre/rendu/Tek3/IA/gomoku"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="/home/alexandre/rendu/Tek3/IA/gomoku"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="/home/alexandre/rendu/Tek3/IA/gomoku"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="/home/alexandre/rendu/Tek3/IA/gomoku"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="/home/alexandre/rendu/Tek3/IA/gomoku"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/alexandre/rendu/Tek3/IA/gomoku"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/alexandre/rendu/Tek3/IA/gomoku"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="renju_prof">
+				<Option output="/home/alexandre/rendu/Tek3/IA/gomoku/renju_prof" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/alexandre/rendu/Tek3/IA/gomoku"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/alexandre/rendu/Tek3/IA/gomoku/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 renju_prof"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="renju_prof/fast">
+				<Option output="/home/alexandre/rendu/Tek3/IA/gomoku/renju_prof" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/alexandre/rendu/Tek3/IA/gomoku"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/alexandre/rendu/Tek3/IA/gomoku/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 renju_prof/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="pbrain-gomoku">
+				<Option output="/home/alexandre/rendu/Tek3/IA/gomoku/pbrain-gomoku" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/alexandre/rendu/Tek3/IA/gomoku"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/alexandre/rendu/Tek3/IA/gomoku/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 pbrain-gomoku"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="pbrain-gomoku/fast">
+				<Option output="/home/alexandre/rendu/Tek3/IA/gomoku/pbrain-gomoku" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/alexandre/rendu/Tek3/IA/gomoku"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/alexandre/rendu/Tek3/IA/gomoku/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 pbrain-gomoku/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alexandre/rendu/Tek3/IA/gomoku/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/alexandre/rendu/Tek3/IA/gomoku/src/API/api.cpp">
+			<Option target="renju_prof"/>
+			<Option target="pbrain-gomoku"/>
+		</Unit>
+		<Unit filename="/home/alexandre/rendu/Tek3/IA/gomoku/src/IOManager.cpp">
+			<Option target="renju_prof"/>
+			<Option target="pbrain-gomoku"/>
+		</Unit>
+		<Unit filename="/home/alexandre/rendu/Tek3/IA/gomoku/src/Logger.cpp">
+			<Option target="renju_prof"/>
+			<Option target="pbrain-gomoku"/>
+		</Unit>
+		<Unit filename="/home/alexandre/rendu/Tek3/IA/gomoku/src/ai/NGM.cpp">
+			<Option target="renju_prof"/>
+			<Option target="pbrain-gomoku"/>
+		</Unit>
+		<Unit filename="/home/alexandre/rendu/Tek3/IA/gomoku/src/ai/eval.cpp">
+			<Option target="renju_prof"/>
+			<Option target="pbrain-gomoku"/>
+		</Unit>
+		<Unit filename="/home/alexandre/rendu/Tek3/IA/gomoku/src/ai/manager.cpp">
+			<Option target="renju_prof"/>
+			<Option target="pbrain-gomoku"/>
+		</Unit>
+		<Unit filename="/home/alexandre/rendu/Tek3/IA/gomoku/src/ai/utils.cpp">
+			<Option target="renju_prof"/>
+			<Option target="pbrain-gomoku"/>
+		</Unit>
+		<Unit filename="/home/alexandre/rendu/Tek3/IA/gomoku/src/controller.cpp">
+			<Option target="renju_prof"/>
+			<Option target="pbrain-gomoku"/>
+		</Unit>
+		<Unit filename="/home/alexandre/rendu/Tek3/IA/gomoku/src/main.cpp">
+			<Option target="renju_prof"/>
+			<Option target="pbrain-gomoku"/>
+		</Unit>
+		<Unit filename="/home/alexandre/rendu/Tek3/IA/gomoku/src/map.cpp">
+			<Option target="renju_prof"/>
+			<Option target="pbrain-gomoku"/>
+		</Unit>
+		<Unit filename="/home/alexandre/rendu/Tek3/IA/gomoku/src/other/global.cpp">
+			<Option target="renju_prof"/>
+			<Option target="pbrain-gomoku"/>
+		</Unit>
+		<Unit filename="/home/alexandre/rendu/Tek3/IA/gomoku/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
